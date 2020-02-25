@@ -39,8 +39,6 @@ public class HtmlPageController {
     public String transmission(){
         return "transmissions.html";
     }
-    @GetMapping("/catalog")
-    public String catalog(){ return "catalog.html"; }
     @PreAuthorize("hasAnyRole('ADMIN')")
     @GetMapping("/index")
     public String index(){ return "index.html"; }
@@ -54,6 +52,5 @@ public class HtmlPageController {
     public String login(){ return "login.html"; }
     @GetMapping("/register")
     public String register(){ return "register.html"; }
-    @GetMapping("/favorites")
-    public String favorites(){ return "favorites.html"; }
+
 }

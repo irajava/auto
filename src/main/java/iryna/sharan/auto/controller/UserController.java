@@ -39,12 +39,6 @@ public class UserController {
     public void checkToken() {
     }
 
-    @PreAuthorize("authentication.principal == #text && hasAnyRole('USER', 'ADMIN')")
-    @GetMapping("/test")
-    public void test(String text) {
-        System.out.println("find cart of " + text);
-
-    }
 
     @GetMapping
     public Set<CarResponse> loadFavoritesCars() {
