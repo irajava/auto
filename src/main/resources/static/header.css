@@ -1,0 +1,33 @@
+/* Style the header */
+.header {
+    background-image: url('img/fotoHeader.jpg');
+
+    background-repeat: no-repeat;
+    /*background-attachment: fixed;*/
+    background-size: 1440px;
+    height: 340px;
+    /*text-align: center;*/
+}
+
+h1 {
+    /*position: fixed;*/
+    font-size: 50px;
+    /*margin-top: 20px;*/
+    margin-left: 180px;
+    font-family: 'Crete Round', serif;
+    font-family: 'Sriracha', cursive;
+}
+
+h1 a {
+    text-decoration: none;
+    color: #666;
+    position: absolute;
+
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 1)), color-stop(50%, rgba(0, 0, 0, .5)), to(rgba(0, 0, 0, 1)));
+}
+
+h1:after {
+    content: 'FIND YOUR DREAM';
+    color: #333333;
+    text-shadow: 0 1px 0 white;
+}

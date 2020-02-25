@@ -1,0 +1,428 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    background-image: url('https://www.publicdomainpictures.net/pictures/60000/nahled/grey-gradient-background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font: 16px "Trebuchet MS", Tahoma, Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-width: 900px;
+}
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+.main-container {
+    height: 100%;
+    padding-bottom: 100px;
+}
+
+/* Style the header */
+
+table {
+    font: 16px "Trebuchet MS", Tahoma, Arial, sans-serif;
+    /*border-collapse: collapse;*/
+    /*width: 40%;*/
+    text-align: start;
+}
+
+td {
+    border: 1px solid;
+    text-align: left;
+    padding: 8px;
+
+}
+
+th {
+    border: 1px solid;
+    text-align: left;
+    padding: 8px;
+
+}
+
+img {
+    border: 1px;
+    text-align: center;
+    width: 140px;
+    height: 100px;
+
+}
+
+
+/* Create three unequal columns that floats next to each other */
+.column {
+    float: left;
+    padding: 15px;
+}
+
+/* Left and right column */
+.column.side-left {
+    width: 20%;
+}
+
+#send-btn {
+    width: 80px;
+    height: 25px;
+    padding: 0 0 2px;
+    margin-left: 160px;
+    margin-top: 30px;
+    font: 16px "Trebuchet MS", Tahoma, Arial, sans-serif;
+    outline: none;
+    position: relative;
+    cursor: pointer;
+    border-radius: 3px;
+    color: #555;
+    text-shadow: 1px 1px #D6D6D6;
+    border: 1px solid #959595;
+    border-top: 1px solid #B4B4B4;
+    border-bottom: 1px solid #7B7B7B;
+    box-shadow: inset 0 1px #E3E3E3,
+    inset 1px 0 #CECECE,
+    inset -1px 0 #CECECE,
+    inset 0 -1px #BDBDBD,
+    0 2px #878787,
+    0 3px #7B7B7B,
+    0 4px 2px rgba(0, 0, 0, 0.4);
+    background: -moz-linear-gradient(top, #d1d1d1 0%, #afafaf 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d1d1d1), color-stop(100%, #afafaf)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #d1d1d1 0%, #afafaf 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #d1d1d1 0%, #afafaf 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #d1d1d1 0%, #afafaf 100%); /* IE10+ */
+    background: linear-gradient(top, #d1d1d1 0%, #afafaf 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d1d1d1', endColorstr='#afafaf', GradientType=0); /* IE6-9 */
+    background-color: #C0C0C0;
+}
+
+#send-btn::-moz-focus-inner {
+    border: 0
+}
+
+#send-btn:hover {
+    border-top: 1px solid #A2A2A2;
+    box-shadow: inset 0 1px #D4D4D4,
+    inset 1px 0 #CECECE,
+    inset -1px 0 #CECECE,
+    inset 0 -1px #CECECE,
+    0 2px #878787,
+    0 3px #7B7B7B,
+    0 4px 2px rgba(0, 0, 0, 0.4);
+    background: -moz-linear-gradient(top, #b7b7b7 0%, #c2c2c2 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #b7b7b7), color-stop(100%, #c2c2c2)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #b7b7b7 0%, #c2c2c2 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #b7b7b7 0%, #c2c2c2 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #b7b7b7 0%, #c2c2c2 100%); /* IE10+ */
+    background: linear-gradient(top, #b7b7b7 0%, #c2c2c2 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b7b7b7', endColorstr='#c2c2c2', GradientType=0); /* IE6-9 */
+    background-color: #C0C0C0;
+}
+
+#send-btn:active {
+    top: 3px;
+    border: 1px solid #919191;
+    border-top: 1px solid #757575;
+    border-bottom: 1px solid #9F9F9F;
+    background: #B3B3B3;
+    box-shadow: inset 0 1px 2px #7F7F7F;
+}
+
+button {
+    width: 60px;
+    height: 25px;
+    padding: 0 0 2px;
+    margin-left: 8px;
+    margin-top: 10px;
+    font: 16px "Trebuchet MS", Tahoma, Arial, sans-serif;
+    outline: none;
+    position: relative;
+    cursor: pointer;
+    border-radius: 3px;
+    color: #555;
+    text-shadow: 1px 1px #D6D6D6;
+    border: 1px solid #959595;
+    border-top: 1px solid #B4B4B4;
+    border-bottom: 1px solid #7B7B7B;
+    box-shadow: inset 0 1px #E3E3E3,
+    inset 1px 0 #CECECE,
+    inset -1px 0 #CECECE,
+    inset 0 -1px #BDBDBD,
+    0 2px #878787,
+    0 3px #7B7B7B,
+    0 4px 2px rgba(0, 0, 0, 0.4);
+    background: -moz-linear-gradient(top, #d1d1d1 0%, #afafaf 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d1d1d1), color-stop(100%, #afafaf)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #d1d1d1 0%, #afafaf 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #d1d1d1 0%, #afafaf 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #d1d1d1 0%, #afafaf 100%); /* IE10+ */
+    background: linear-gradient(top, #d1d1d1 0%, #afafaf 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d1d1d1', endColorstr='#afafaf', GradientType=0); /* IE6-9 */
+    background-color: #C0C0C0;
+}
+
+button::-moz-focus-inner {
+    border: 0
+}
+
+button:hover {
+    border-top: 1px solid #A2A2A2;
+    box-shadow: inset 0 1px #D4D4D4,
+    inset 1px 0 #CECECE,
+    inset -1px 0 #CECECE,
+    inset 0 -1px #CECECE,
+    0 2px #878787,
+    0 3px #7B7B7B,
+    0 4px 2px rgba(0, 0, 0, 0.4);
+    background: -moz-linear-gradient(top, #b7b7b7 0%, #c2c2c2 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #b7b7b7), color-stop(100%, #c2c2c2)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #b7b7b7 0%, #c2c2c2 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #b7b7b7 0%, #c2c2c2 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #b7b7b7 0%, #c2c2c2 100%); /* IE10+ */
+    background: linear-gradient(top, #b7b7b7 0%, #c2c2c2 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b7b7b7', endColorstr='#c2c2c2', GradientType=0); /* IE6-9 */
+    background-color: #C0C0C0;
+}
+
+button:active {
+    top: 3px;
+    border: 1px solid #919191;
+    border-top: 1px solid #757575;
+    border-bottom: 1px solid #9F9F9F;
+    background: #B3B3B3;
+    box-shadow: inset 0 1px 2px #7F7F7F;
+}
+
+label {
+    width: 80px;
+    height: 33px;
+    padding-left: 15px;
+    /*margin-left: 70px;*/
+    /*margin-top: 270px;*/
+    font: 16px "Trebuchet MS", Tahoma, Arial, sans-serif;
+
+}
+
+#make_select {
+    width: 180px;
+    height: 33px;
+    padding-left: 5px;
+    font: 16px "Trebuchet MS", Tahoma, Arial, sans-serif;
+    border-radius: 3px;
+    border: 1px solid #959595;
+    background: #dddddd;
+    margin-left: 30px;
+
+}
+
+#model_select {
+    width: 180px;
+    height: 33px;
+    padding-left: 5px;
+    font: 16px "Trebuchet MS", Tahoma, Arial, sans-serif;
+    border-radius: 3px;
+    border: 1px solid #959595;
+    background: #dddddd;
+    margin-left: 15px;
+
+}
+
+#fuel_select {
+    width: 180px;
+    height: 33px;
+    padding-left: 5px;
+    font: 16px "Trebuchet MS", Tahoma, Arial, sans-serif;
+    border-radius: 3px;
+    border: 1px solid #959595;
+    background: #dddddd;
+    margin-left: 25px;
+
+}
+
+#body_select {
+    width: 180px;
+    height: 33px;
+    padding-left: 5px;
+    font: 16px "Trebuchet MS", Tahoma, Arial, sans-serif;
+    border-radius: 3px;
+    border: 1px solid #959595;
+    background: #dddddd;
+    margin-left: 30px;
+
+}
+
+#engine_select {
+    width: 180px;
+    height: 33px;
+    padding-left: 5px;
+    font: 16px "Trebuchet MS", Tahoma, Arial, sans-serif;
+    border-radius: 3px;
+    border: 1px solid #959595;
+    background: #dddddd;
+    margin-left: 10px;
+
+}
+
+#colour_select {
+    width: 180px;
+    height: 33px;
+    padding-left: 5px;
+    font: 16px "Trebuchet MS", Tahoma, Arial, sans-serif;
+    border-radius: 3px;
+    border: 1px solid #959595;
+    background: #dddddd;
+    margin-left: 10px;
+
+}
+
+#conditioning_select {
+    width: 180px;
+    height: 33px;
+    padding-left: 5px;
+    font: 16px "Trebuchet MS", Tahoma, Arial, sans-serif;
+    border-radius: 3px;
+    border: 1px solid #959595;
+    background: #dddddd;
+    margin-left: 60px;
+
+}
+
+#transmission_select {
+    width: 180px;
+    height: 33px;
+    padding-left: 5px;
+    font: 16px "Trebuchet MS", Tahoma, Arial, sans-serif;
+    border-radius: 3px;
+    border: 1px solid #959595;
+    background: #dddddd;
+    margin-left: 60px;
+
+}
+
+#mileage_input {
+    width: 180px;
+    height: 30px;
+    padding-left: 5px;
+    font: 16px "Trebuchet MS", Tahoma, Arial, sans-serif;
+    border-radius: 3px;
+    border: 1px solid #959595;
+    background: #dddddd;
+    margin-left: 10px;
+}
+
+#number_doors_input {
+    width: 90px;
+    height: 30px;
+    padding-left: 5px;
+    font: 16px "Trebuchet MS", Tahoma, Arial, sans-serif;
+    border-radius: 3px;
+    border: 1px solid #959595;
+    background: #dddddd;
+    margin-left: 30px;
+}
+
+#number_seats_input {
+    width: 90px;
+    height: 30px;
+    padding-left: 5px;
+    font: 16px "Trebuchet MS", Tahoma, Arial, sans-serif;
+    border-radius: 3px;
+    border: 1px solid #959595;
+    background: #dddddd;
+    margin-left: 40px;
+}
+
+#price_input {
+    width: 180px;
+    height: 30px;
+    padding-left: 5px;
+    font: 16px "Trebuchet MS", Tahoma, Arial, sans-serif;
+    border-radius: 3px;
+    border: 1px solid #959595;
+    background: #dddddd;
+    margin-left: 20px;
+}
+
+#production_date_input {
+    width: 180px;
+    height: 30px;
+    padding-left: 5px;
+    font: 16px "Trebuchet MS", Tahoma, Arial, sans-serif;
+    border-radius: 3px;
+    border: 1px solid #959595;
+    background: #dddddd;
+    margin-left: 70px;
+}
+
+.c {
+    margin-top: 50px;
+}
+
+/* Middle column */
+.column.middle {
+    width: 25%;
+}
+
+.column.side-right {
+    width: 25%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .column.side, .column.middle {
+        width: 100%;
+    }
+}
+
+
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+
+}
+
+.inputfile + label {
+    font-size: 1.00em;
+    font-weight: 500;
+    color: black;
+    background-color: #dddddd;
+    display: inline-block;
+    /*text-align: center;*/
+    padding-top: 5px;
+    margin-left: 150px;
+    padding-left: 5px;
+    /*margin-top: 270px;*/
+    font: 16px "Trebuchet MS", Tahoma, Arial, sans-serif;
+    border-radius: 3px;
+    border: 1px solid #959595;
+    background: #dddddd;
+    width: 90px;
+    height: 30px;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+    background-color: #757575;
+}
+
+.inputfile + label {
+    cursor: pointer; /* "hand" cursor */
+}
+
+

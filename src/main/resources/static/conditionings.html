@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Conditionings</title>
+    <link href="styleT.css" rel="stylesheet">
+    <link href="navibarT.css" rel="stylesheet">
+    <link href="footer.css" rel="stylesheet">
+    <script type="text/javascript" src="conditionings.js"></script>
+</head>
+
+<body>
+<div class="topnav">
+    <a href="http://localhost:8080/indexUser">Home</a>
+    <a href="http://localhost:8080/cars">Car</a>
+    <a href="http://localhost:8080/makes">Make</a>
+    <a href="http://localhost:8080/models">Model</a>
+    <a href="http://localhost:8080/bodies">Body</a>
+    <a href="http://localhost:8080/transmissions">Transmission</a>
+    <a href="http://localhost:8080/fuels">Fuel</a>
+    <a href="http://localhost:8080/engines">Engine</a>
+    <a style="background-color: dimgray" href="http://localhost:8080/conditionings">Conditioning</a>
+    <a href="http://localhost:8080/colours">Colour</a>
+    <p style="float:right" class="username-container"></p>
+</div>
+
+<div class="header">
+    <h2> Types of Conditionings</h2>
+</div>
+
+<div class="main-container">
+    <div>
+        <br>
+        <input type="text" id="input" placeholder="Type">
+        <button id="create-btn">Create</button>
+    </div>
+    <div>
+        <br>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Conditioning</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody id="conditionings_table"></tbody>
+        </table>
+    </div>
+</div>
+
+<div class="footer">
+    <h4><i>Created by</i> Iryna Sharan</h4>
+    <p>&#9742 +380630000000</p>
+    <p>&#9993 sharanit@ukr.net</p>
+    <p>2020</p>
+</div>
+
+<script>F();</script>
+</body>
+</html>

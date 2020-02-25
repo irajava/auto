@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Crete+Round|Sriracha&display=swap" rel="stylesheet">
+    <link href="header.css" rel="stylesheet">
+    <link href="body.css" rel="stylesheet">
+    <link href="navibarA.css" rel="stylesheet">
+    <link href="indexUser.css" rel="stylesheet">
+    <link href="footer.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="header">
+    <h1 class="logo"></h1>
+</div>
+
+<div class="topnav">
+    <a href="http://localhost:8080/indexUser">Home</a>
+    <a href="http://localhost:8080/cars">Car</a>
+    <a href="http://localhost:8080/makes">Make</a>
+    <a href="http://localhost:8080/models">Model</a>
+    <a href="http://localhost:8080/bodies">Body</a>
+    <a href="http://localhost:8080/transmissions">Transmission</a>
+    <a href="http://localhost:8080/fuels">Fuel</a>
+    <a href="http://localhost:8080/engines">Engine</a>
+    <a href="http://localhost:8080/conditionings">Conditioning</a>
+    <a href="http://localhost:8080/colours">Colour</a>
+    <a style="float:right" href="http://localhost:8080/register">Registration</a>
+    <a style="float:right" class="login" href="http://localhost:8080/login">Log in</a>
+    <p style="float:right" class="username-container"></p>
+</div>
+
+<div class="main-container">
+    <div class="row">
+        <div class="column side-left">
+            <div class="b">
+                <br>
+                <div>
+                    <lable>Make</lable>
+                    <select id="make_select"></select>
+                </div>
+                <div>
+                    <br>
+                    <lable>Model</lable>
+                    <select id="model_select">
+                    </select>
+                </div>
+                <div>
+                    <br>
+                    <lable>Fuel</lable>
+                    <select id="fuel_select"></select>
+                </div>
+                <br>
+                <lable>Production Date</lable>
+                <div>
+                    <br>
+                    <input type="date" id="production_date_from" placeholder="From (YYYY-MM-DD)">
+                </div>
+                <div>
+                    <br>
+                    <input type="date" id="production_date_to" placeholder="To (YYYY-MM-DD)">
+                </div>
+                <br>
+                <lable>Price</lable>
+                <div>
+                    <br>
+                    <input type="text" id="price_min" placeholder="min">
+                </div>
+                <div>
+                    <br>
+                    <input type="text" id="price_max" placeholder="max">
+                </div>
+                <button id="search">Search..</button>
+            </div>
+            <br>
+            <br>
+        </div>
+
+        <div class="column middle">
+            <h2></h2>
+            <div>
+                <label>Page size</label>
+                <select id="page-size">
+                    <option value="5" selected>5</option>
+                    <option value="10">10</option>
+                    <option value="50">50</option>
+                </select>
+                <label>Sorted by</label>
+                <select id="sortedBy">
+                    <option value="price" selected>Price</option>
+                    <option value="productionDate">Production date</option>
+                    <option value="model.makeName">Make</option>
+                    <option value="modelName">Model</option>
+                    <option value="mileage">Mileage</option>
+                </select>
+                <label>Direction</label>
+                <select id="direction">
+                    <option value="ASC">from lower to high (A->Z)</option>
+                    <option value="DESC" selected>from high to lower (Z->A)</option>
+                </select>
+            </div>
+            <br>
+            <table>
+                <tr>
+                    <th id="img"></th>
+                </tr>
+                </thead>
+                <tbody id="cars_table"></tbody>
+            </table>
+            <div class="page-controller">
+                <button class="previous-btn">Previous</button>
+                <span id="page-number">0</span>
+                <button class="next-btn">Next</button>
+            </div>
+        </div>
+
+        <div class="column side-right">
+            <h2></h2>
+            <!-- weather widget start -->
+            <br>
+            <div id="SinoptikInformer" style="width:200px;" class="SinoptikInformer type4c1"><div class="siHeader"><div class="siLh"><div class="siMh"><a onmousedown="siClickCount();" class="siLogo" href="https://ua.sinoptik.ua/" target="_blank" rel="nofollow" title="Погода"> </a>Погода </div></div></div><div class="siBody"><div class="siTitle"><span id="siHeader"></span></div><a onmousedown="siClickCount();" href="https://ua.sinoptik.ua/погода-львів" title="Погода у Львові" target="_blank"><div class="siCity"><div class="siCityName"><span>Львів</span></div><div id="siCont0" class="siBodyContent"><div class="siLeft"><div class="siTerm"></div><div class="siT" id="siT0"></div><div id="weatherIco0"></div></div><div class="siInf"><p>вологість: <span id="vl0"></span></p><p>тиск: <span id="dav0"></span></p><p>вітер: <span id="wind0"></span></p></div></div></div></a><div class="siLinks">Погода на 10 днів від <a href="https://ua.sinoptik.ua/погода-львів/10-днів" title="Погода на 10 днів" target="_blank" onmousedown="siClickCount();">sinoptik.ua</a></div></div><div class="siFooter"><div class="siLf"><div class="siMf"></div></div></div></div>
+            <script type="text/javascript" charset="UTF-8" src="//sinoptik.ua/informers_js.php?title=3&amp;wind=2&amp;cities=303014487&amp;lang=ua"></script>
+            <br> <!-- Minfin.com.ua calc informer 200x112 yellow-->
+            <div id="minfin-informer-m1Fn-calc">Завантажуємо <a href="https://minfin.com.ua/ua/currency/"
+                                                                target="_blank">курси
+                валют</a> від minfin.com.ua</a></div>
+            <script>var iframe = '<ifra' + 'me width="200" height="112" fram' + 'eborder="0" src="https://informer.minfin.com.ua/ua/gen/calc/nbu/?color=yellow" vspace="0" scrolling="no" hspace="0" allowtransparency="true"style="width:200px;height:112px;ove' + 'rflow:hidden;"></iframe>';
+            var cl = 'minfin-informer-m1Fn-calc';
+            document.getElementById(cl).innerHTML = iframe; </script>
+            <noscript><img src="https://informer.minfin.com.ua/gen/img.png" width="1" height="1"
+                           alt="minfin.com.ua: курси валют" title="Курс валют" border="0"/></noscript>
+            <!-- Minfin.com.ua calc informer 200x112 yellow-->
+        </div>
+    </div>
+
+    <div class="footer">
+        <h4><i>Created by</i> Iryna Sharan</h4>
+        <p>&#9742 +380630000000</p>
+        <p>&#9993 sharanit@ukr.net</p>
+        <p>2020</p>
+    </div>
+</div>
+</body>
+
+<script>
+    function func() {
+        const API_URL = 'http://localhost:8080';
+        const carsTable = document.getElementById("cars_table");
+        const productionDateFrom = document.getElementById("production_date_from");
+        const productionDateTo = document.getElementById("production_date_to");
+        const maxPrice = document.getElementById("price_max");
+        const minPrice = document.getElementById("price_min");
+        const makeSelect = document.getElementById("make_select");
+        const modelSelect = document.getElementById("model_select");
+        const fuelSelect = document.getElementById("fuel_select");
+        const search = document.getElementById("search");
+        const pageSize = document.getElementById('page-size');
+        const sortedBy = document.getElementById('sortedBy');
+        const direction = document.getElementById('direction');
+        const pageNumber = document.getElementById('page-number');
+        let pages = 0;
+        document.querySelector('.username-container').innerHTML = window.localStorage.getItem('username');
+
+        const getCarsFromApi = () => {
+            let xhr = new XMLHttpRequest();
+            xhr.open('GET', `${API_URL}/car/page?paginationRequest.direction=${direction.value}&paginationRequest.field=${sortedBy.value}&paginationRequest.page=${pageNumber.innerHTML}&paginationRequest.size=${pageSize.value}&makeId=${makeSelect.value}&modelId=${modelSelect.value}&fuelId=${fuelSelect.value}
+                &productionDateFrom=${productionDateFrom.value}&productionDateTo=${productionDateTo.value}&minPrice=${minPrice.value}&maxPrice=${maxPrice.value} `);
+            xhr.onload = function () {
+                var y;
+                if (xhr.status !== 200) {
+                    console.log('error', xhr);
+                } else {
+                    carsTable.innerHTML = '';
+                    const res = JSON.parse(xhr.response);
+                    for (const car of res.data) {
+                        let row = document.createElement('tr');
+                        //const year=car.productionDate.getYear.toString();
+                        // let y =Date.parse(car.productionDate);
+                        //
+                        // console.log("year" + y.getYear().toString());
+                        const imgUrl = car.imageName ? `${API_URL}/foto/${car.imageName}` : 'https://www.petescarsales.com/dist/img/nophoto.jpg';
+                        row.innerHTML = `
+                        <td><img src="${imgUrl}" height="120"></td>
+                        <td><b>${car.model.makeName} ${car.model.name}</b> ${car.productionDate}
+                        <br> <b> <i style="font-size: 18px "Trebuchet MS", Tahoma, Arial, sans-serif;">${car.price} $</i></b>
+                        <br> <i style="font-size: 14px "Trebuchet MS", Tahoma, Arial, sans-serif;">${car.mileage} km</i></td>
+                        <td>
+                         <a class="detail-btn" href="/item?id=${car.id}">Details</a>
+                         <!--<button class="favourite-btn" data-id="${car.id}">&#9734</button>-->
+                        </td>
+                    `;
+                        carsTable.appendChild(row);
+
+                    }
+                    pages = res.totalPages;
+
+
+                }
+            };
+            xhr.send();
+        };
+
+
+        const setActionOnNextButtonClick = () => {
+            document.getElementsByClassName('next-btn')[0].addEventListener('click', (e) => {
+                console.log('asd');
+                let currentPage = +pageNumber.innerHTML;
+                if (currentPage < pages - 1) {
+                    pageNumber.innerHTML = currentPage + 1;
+                    getCarsFromApi();
+                }
+            });
+        };
+        const setActionOnPreviousButtonClick = () => {
+            document.getElementsByClassName('previous-btn')[0].addEventListener('click', (e) => {
+                let currentPage = +pageNumber.innerHTML;
+                if (currentPage === 0) return;
+                pageNumber.innerHTML = currentPage - 1;
+                getCarsFromApi();
+            });
+        };
+        const setActionSelectPageSize = () => {
+            document.getElementById('page-size').addEventListener('change', (e) => {
+                pageSize.value;
+                getCarsFromApi();
+            });
+        };
+        const setActionSelectSortedBy = () => {
+            document.getElementById('sortedBy').addEventListener('change', (e) => {
+                sortedBy.value;
+                getCarsFromApi();
+            });
+        };
+        const setActionSelectDirection = () => {
+            document.getElementById('direction').addEventListener('change', (e) => {
+                direction.value;
+                getCarsFromApi();
+            });
+        };
+        setActionSelectPageSize();
+        setActionSelectSortedBy();
+        setActionSelectDirection();
+        setActionOnNextButtonClick();
+        setActionOnPreviousButtonClick();
+        getCarsFromApi();
+
+        const setActionOnSearchButtonClick = () => {
+            search.addEventListener('click', (e) => {
+                let xhr = new XMLHttpRequest();
+                xhr.open('GET', `${API_URL}/car/page?paginationRequest.direction=${direction.value}&paginationRequest.field=${sortedBy.value}&paginationRequest.page=${pageNumber.innerHTML}&paginationRequest.size=${pageSize.value}&makeId=${makeSelect.value}&modelId=${modelSelect.value}&fuelId=${fuelSelect.value}
+                &productionDateFrom=${productionDateFrom.value}&productionDateTo=${productionDateTo.value}&minPrice=${minPrice.value}&maxPrice=${maxPrice.value} `);
+
+                xhr.onload = function () {
+                    if (xhr.status !== 200) {
+                        console.log('error', xhr);
+                    } else {
+                        console.log('ok', xhr.response);
+                        carsTable.innerHTML = '';
+                        const res = JSON.parse(xhr.response);
+                        for (const car of res.data) {
+                            let row = document.createElement('tr');
+                            const imgUrl = car.imageName ? `${API_URL}/foto/${car.imageName}` : 'https://www.petescarsales.com/dist/img/nophoto.jpg';
+                            row.innerHTML = `
+                        <td><img src="${imgUrl}" height="120"></td>
+                        <td><b>${car.model.makeName} ${car.model.name}</b> ${car.productionDate}
+                        <br> <b> <i style="font-size: 18px "Trebuchet MS", Tahoma, Arial, sans-serif;">${car.price} $</i></b>
+                        <br> <i style="font-size: 14px "Trebuchet MS", Tahoma, Arial, sans-serif;">${car.mileage} km</i></td>
+                        <td>
+                         <a class="detail-btn" href="/item?id=${car.id}">Details</a>
+                         <button class="favourite-btn" data-id="${car.id}">&#9734</button>
+                        </td>
+                    `;
+                            carsTable.appendChild(row);
+
+                        }
+                        pages = res.totalPages;
+
+
+                    }
+                };
+                xhr.send();
+            });
+        };
+        setActionOnSearchButtonClick();
+
+        let xhr4 = new XMLHttpRequest();
+        xhr4.open('GET', `${API_URL}/fuel`);
+        xhr4.onload = function () {
+            if (xhr4.status !== 200) {
+                console.log('error', xhr4);
+            } else {
+                console.log('ok', xhr4.response);
+                fuelSelect.innerHTML = '<option value="" disabled selected>Select</option>';
+                for (const fuel of JSON.parse(xhr4.response)) {
+                    let option = document.createElement('option');
+                    option.setAttribute('value', fuel.id);
+                    option.innerText = fuel.type;
+                    fuelSelect.appendChild(option);
+                }
+            }
+        };
+        xhr4.send();
+
+        let xhr5 = new XMLHttpRequest();
+        xhr5.open('GET', `${API_URL}/make`);
+        xhr5.onload = function () {
+            if (xhr5.status !== 200) {
+                console.log('error', xhr5);
+            } else {
+                console.log('ok', xhr5.response);
+                makeSelect.innerHTML = '<option value="" disabled selected>Select</option>';
+                for (const make of JSON.parse(xhr5.response)) {
+                    let option = document.createElement('option');
+                    option.setAttribute('value', make.id);
+                    option.innerText = make.name;
+                    makeSelect.appendChild(option);
+                }
+            }
+        };
+        xhr5.send();
+
+        let xhr6 = new XMLHttpRequest();
+        xhr6.open('GET', `${API_URL}/model`);
+        xhr6.onload = function () {
+            if (xhr6.status !== 200) {
+                console.log('error', xhr6);
+            } else {
+                console.log('ok', xhr6.response);
+                modelSelect.innerHTML = '<option value="" disabled selected>Select</option>';
+                for (const model of JSON.parse(xhr6.response)) {
+                    let option = document.createElement('option');
+                    option.setAttribute('value', model.id);
+                    option.innerText = model.name;
+                    modelSelect.appendChild(option);
+                }
+            }
+        };
+        xhr6.send();
+
+        const setActionSelectMake = () => {
+            makeSelect.addEventListener('change', (e) => {
+                let xhr = new XMLHttpRequest();
+                xhr.open('GET', `${API_URL}/model/byMake?makeId=${makeSelect.value}`);
+                // console.log(id);
+
+                xhr.onload = function () {
+                    if (xhr.status !== 200) {
+                        console.log('error', xhr);
+                    } else {
+                        console.log('ok', xhr.response);
+                        modelSelect.innerHTML = '<option value="" disabled selected>Select</option>';
+                        for (const model of JSON.parse(xhr.response)) {
+                            let option = document.createElement('option');
+                            option.setAttribute('value', model.id);
+                            option.innerText = model.name;
+                            modelSelect.appendChild(option);
+                        }
+                    }
+                };
+                xhr.send();
+            });
+        };
+        setActionSelectMake();
+
+        getCarsFromApi();
+    }
+
+    func();
+</script>
+</html>

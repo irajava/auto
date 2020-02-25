@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+    <link href="cars.css" rel="stylesheet">
+    <link href="navibarT.css" rel="stylesheet">
+    <link href="footer.css" rel="stylesheet">
+    <script type="text/javascript" src="cars.js"></script>
+</head>
+
+<body>
+<div class="topnav">
+    <a href="http://localhost:8080/indexUser">Home</a>
+    <a style="background-color: dimgray" href="http://localhost:8080/cars">Car</a>
+    <a href="http://localhost:8080/makes">Make</a>
+    <a href="http://localhost:8080/models">Model</a>
+    <a href="http://localhost:8080/bodies">Body</a>
+    <a href="http://localhost:8080/transmissions">Transmission</a>
+    <a href="http://localhost:8080/fuels">Fuel</a>
+    <a href="http://localhost:8080/engines">Engine</a>
+    <a href="http://localhost:8080/conditionings">Conditioning</a>
+    <a href="http://localhost:8080/colours">Colour</a>
+    <p style="float:right" class="username-container"></p>
+</div>
+
+<div class="main-container">
+    <div class="row">
+
+        <div class="column side-left">
+            <div class="b">
+                <br>
+                <div>
+                    <lable>Make</lable>
+                    <select id="make_select"></select>
+                </div>
+                <br>
+                <lable>Production Date</lable>
+                <div>
+                    <br>
+                    <input type="text" id="production_date_input" placeholder="(YYYY-MM-DD)">
+                </div>
+                <div>
+                    <br>
+                    <lable>Mileage</lable>
+                    <input type="number" id="mileage_input" min="1000" placeholder="Mileage">
+                </div>
+                <div>
+                    <br>
+                    <lable>Body</lable>
+                    <select id="body_select"></select>
+                </div>
+                <div>
+                    <br>
+                    <lable>Number of seats</lable>
+                    <input type="number" id="number_seats_input" min="0">
+                </div>
+            </div>
+        </div>
+
+        <div class="column side-middle">
+            <div class="b">
+                <br>
+                <div>
+                    <lable>Model</lable>
+                    <select id="model_select"></select>
+                </div>
+                <div>
+                    <br>
+                    <lable>Transmission</lable>
+                    <div>
+                        <br>
+                        <select id="transmission_select"></select>
+                    </div>
+                </div>
+                <div>
+                    <br>
+                    <lable>Fuel</lable>
+                    <select id="fuel_select"></select>
+                </div>
+                <div>
+                    <br>
+                    <lable>Colour</lable>
+                    <select id="colour_select"></select>
+                </div>
+                <div>
+                    <br>
+                    <lable>Number of doors</lable>
+                    <input type="number" id="number_doors_input" min="0">
+                </div>
+
+            </div>
+        </div>
+
+        <div class="column side-right">
+            <div class="b">
+                <div class="c">
+                    <br>
+                    <lable>Conditioning</lable>
+                    <div>
+                        <br>
+                        <select id="conditioning_select"></select>
+                    </div>
+                </div>
+                <div>
+                    <br>
+                    <lable>Engine</lable>
+                    <select id="engine_select"></select>
+                </div>
+                <div>
+                    <br>
+                    <lable>Price</lable>
+                    <input type="number" id="price_input" min="1" placeholder="Price">
+                </div>
+                <br>
+                <div class="chooseFoto">
+                    <input type="file" name="file" id="image_input" class="inputfile"/>
+                    <label for="image_input">&#8682 Add foto </label>
+                </div>
+                <div>
+                    <br>
+                    <button id="send-btn">Create</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <br>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Image</th>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Production date</th>
+                <th>Mileage</th>
+                <th>Price</th>
+                <th>Body</th>
+                <th>Colour</th>
+                <th>Conditioning</th>
+                <th>Transmission</th>
+                <th>Fuel</th>
+                <th>Engine</th>
+                <th>Number seats</th>
+                <th>Number doors</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody id="cars_table"></tbody>
+        </table>
+    </div>
+</div>
+
+<div class="footer">
+    <h4><i>Created by</i> Iryna Sharan</h4>
+    <p>&#9742 +380630000000</p>
+    <p>&#9993 sharanit@ukr.net</p>
+    <p>2020</p>
+</div>
+
+<script>f();</script>
+</body>
+</html>
